@@ -106,6 +106,9 @@ result = collection.find_one({"name": "wk"})
 # ดึงข้อมูลทั้งหมด
 result_all = collection.find()
 
+print(result)
+print([x for x in result_all])
+
 ```
 
 ## **อัปเดตข้อมูลใน MongoDB**
