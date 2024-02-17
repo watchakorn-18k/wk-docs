@@ -13,15 +13,13 @@ const config = {
   favicon: 'img/wk-18k.png',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://watchakorn-18k.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'watchakorn-18k', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  baseUrl: '/wk-docs/',
+  projectName: 'watchakorn-18k.github.io',
+  organizationName: 'watchakorn-18k',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
