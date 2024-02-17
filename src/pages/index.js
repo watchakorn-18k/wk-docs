@@ -10,19 +10,25 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className="bg-blue-500">
-      <div className="container mx-auto text-center py-24">
-        <h1 className="text-4xl font-bold text-white">{siteConfig.title}</h1>
-        <p className="text-xl py-6 text-white">{siteConfig.tagline}</p>
+    <header className="bg-base-100 h-screen">
+      <div className="container mx-auto py-24 ">
+        <h1 className="text-4xl font-bold text-white text-center ">{siteConfig.title}</h1>
+        <p className="text-xl py-6 text-white text-center ">{siteConfig.tagline}</p>
 
-        <div className="py-10">
+        <div className="flex flex-col gap-6 justify-center items-center">
+          <div className="mockup-code w-96">
+            <pre data-prefix="$" className="bg-base-300 rounded-sm"><code>python hello.py</code></pre>
+            <pre data-prefix=">" className="text-success bg-base-300 rounded-sm"><code>Hi Bro!</code></pre>
+            <pre data-prefix=">" className="bg-base-300 rounded-sm"><code>I'm watchakorn..|</code></pre>
+          </div>
           <Link
-            className="bg-white rounded-md text-gray-500 px-4 py-2"
-            to="/docs/intro"
+            className="bg-base-300 rounded-md px-4 py-2 w-96 text-center hover:bg-base-200"
+            to="/tutorials"
           >
-            Docusaurus Tutorial - 5min ⏱️
+            Get Started
           </Link>
         </div>
+
       </div>
     </header>
   );
@@ -32,12 +38,10 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`Hi `}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
+
     </Layout>
   );
 }

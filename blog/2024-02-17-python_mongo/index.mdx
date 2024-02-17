@@ -1,0 +1,148 @@
+---
+slug: การใช้งาน MongoDB กับ Python
+title: การใช้งาน MongoDB กับ Python
+authors: [wk18k]
+tags: [python, mongoDB]
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import TOCInline from '@theme/TOCInline';
+
+
+<TOCInline toc={toc} />
+
+![generate from Bing](OIG4.jpg)
+
+## **MongoDB คืออะไร?**
+
+MongoDB เป็นฐานข้อมูล NoSQL ประเภท Document-oriented ซึ่งหมายความว่าข้อมูลจะถูกเก็บในรูปแบบของเอกสาร JSON
+
+## **การใช้งาน MongoDB กับ Python**
+
+การใช้งาน MongoDB กับ Python นั้นง่ายมาก เพียงแค่ติดตั้งไลบรารี PyMongo
+
+```bash
+pip install pymongo
+```
+
+## **แนะนำให้ใช้ virtual environment ก่อนติดตั้ง**
+
+```bash
+python -m venv venv
+```
+
+## **เปิดใช้งาน virtual environment**
+
+
+<Tabs>
+  <TabItem value="cmd" label="CMD" default>
+    ```cmd 
+    "venv/Scripts/activate"
+    ```
+  </TabItem>
+  <TabItem value="powershell" label="PowerShell">
+    ```bash 
+    venv/Scripts/activate
+    ```
+  </TabItem>
+  <TabItem value="bash" label="BASH">
+    ```bash 
+    source venv/bin/activate 
+    ```
+  </TabItem>
+
+</Tabs>
+
+## **เซิร์ฟเวอร์ MongoDB**
+
+> มีสองแบบคือ:
+>
+> — ติดตั้งเปิดใช้งานเองบนเครื่องด้วยโปรแกรม [WinNMP](https://sourceforge.net/projects/wtnmp/files/latest/download) สำหรับ windows
+>
+> — ใช้ฟรีจาก Cloud ของ [https://www.mongodb.com/](https://www.mongodb.com/) 
+
+## **Database Manager MongoDB**
+
+> มีสองที่แนะนำ:
+>
+> — [dbgate](https://dbgate.org/)
+>
+> — [Studio 3T](https://studio3t.com/download/) 
+
+## **การเชื่อมต่อ MongoDB**
+```python title="database.py"
+from pymongo import MongoClient
+
+# เชื่อมต่อกับ MongoDB
+# highlight-next-line
+client = MongoClient("localhost", 27017)
+
+# เข้าถึงฐานข้อมูล
+db = client["my_database"]
+
+# เข้าถึงคอลเล็กชัน
+collection = db["my_collection"]
+```
+
+## **เพิ่มข้อมูลลงใน MongoDB**
+```python title="app.py"
+# highlight-next-line
+from database import collection
+
+payload = {"name": "wk", "location": "thailand"}
+collection.insert_one(payload)
+```
+
+## **ดึงข้อมูลจาก MongoDB**
+```python title="app.py"
+from database import collection
+
+# ค้นหาข้อมูล
+result = collection.find_one({"name": "wk"})
+
+# ดึงข้อมูลทั้งหมด
+result_all = collection.find()
+
+```
+
+## **อัปเดตข้อมูลใน MongoDB**
+```python title="app.py"
+from database import collection
+
+# อัปเดตข้อมูล
+collection.update_one({"name": "wk"}, {"$set": {"name": "watchakorn"}})
+```
+
+## **ลบข้อมูลใน MongoDB**
+```python title="app.py"
+from database import collection
+
+# ลบข้อมูล
+collection.delete_one({"name": "watchakorn"})
+```
+
+## **เพิ่มข้อมูลหลายรายการใน MongoDB**
+```python title="app.py"
+from database import collection
+
+# เพิ่มข้อมูลหลายรายการ
+documents = [
+    {"name": "John Doe", "age": 30},
+    {"name": "Jane Doe", "age": 25},
+    {"name": "Peter Smith", "age": 40},
+]
+collection.insert_many(documents)
+```
+
+## **ค้นหาและอัปเดตข้อมูลในหนึ่งขั้นตอนใน MongoDB**
+```python title="app.py"
+from database import collection
+
+# เพิ่มข้อมูลหลายรายการ
+document = collection.find_one_and_update(
+    {"name": "Jane Doe"}, {"$set": {"age": 31}}
+)
+
+```
