@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem";
 
 import TOCInline from '@theme/TOCInline';
 
-![generate from Bing](https://wk-docs-blog.s3.ap-southeast-7.amazonaws.com/2025-07-21-hiking_1/20250607_122045.jpg)
+![เที่ยวเดินป่า-เปรโต๊ะลอซู](https://wk-docs-blog.s3.ap-southeast-7.amazonaws.com/2025-07-21-hiking_1/20250607_122045.jpg)
 
 ## **เที่ยวเดินป่า | เปรโต๊ะลอซู จังหวัดตาก**
 
@@ -277,7 +277,7 @@ https://wk-docs-blog.s3.ap-southeast-7.amazonaws.com/2025-07-21-hiking_1/image-3
 ![alt text](
 https://wk-docs-blog.s3.ap-southeast-7.amazonaws.com/2025-07-21-hiking_1/image-35.png)
 
-![generate from Bing](https://wk-docs-blog.s3.ap-southeast-7.amazonaws.com/2025-07-21-hiking_1/20250607_122045.jpg)
+![เที่ยวเดินป่า-เปรโต๊ะลอซู](https://wk-docs-blog.s3.ap-southeast-7.amazonaws.com/2025-07-21-hiking_1/20250607_122045.jpg)
 ( ยามแดงคือน้องชมเดอะแบกน้ำของแท๊)
 
 ![alt text](
