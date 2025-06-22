@@ -41,3 +41,20 @@ a[href^="https://www.youtube.com/"]::before {
   background-size: contain;
   background-repeat: no-repeat;
 }
+a[href^="https://www.instagram.com/"] {
+  position: relative;
+  padding-left: 24px;
+}
+
+a[href^="https://www.instagram.com/"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("https://wk-docs-blog.s3.ap-southeast-7.amazonaws.com/Instagram_logo_2022.svg.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
