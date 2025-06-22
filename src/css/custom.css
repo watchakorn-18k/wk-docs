@@ -12,3 +12,32 @@ body {
   --ifm-code-font-size: 95%;
   --ifm-code-font-family: "consolas", sans-serif;
 }
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+a[href^="https://www.youtube.com/"] {
+  position: relative;
+  padding-left: 24px;
+}
+
+a[href^="https://www.youtube.com/"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("https://wk-docs-blog.s3.ap-southeast-7.amazonaws.com/youtube-svgrepo-com.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
